@@ -83,7 +83,7 @@ export default function ResumeForm({ navigation }) {
       </View>
 
     {/*Second input group for previous job details */}
-    
+
       <View style={styles.details}>
         <Text style={styles.titleText}>Previous Job</Text>
 
@@ -112,6 +112,8 @@ export default function ResumeForm({ navigation }) {
         />
 
         <TextInput
+
+        //You can use react-native-date-picker library aside using the textinput for the date to make the project more interesting
           style={styles.textinput}
           placeholder="Enter Start Date"
           value={userDetails.jobStartDate}
@@ -147,6 +149,15 @@ export default function ResumeForm({ navigation }) {
           }}
         />
       </View>
+
+      <Button
+
+      //when the user presses the button to submit his/her details he/she is navigated to the ShowCV screen
+        title="Create Resume"
+        style={styles.button}
+        onPress={() => navigation.navigation('ShowCV', userDetails)}
+      >
+      </Button>
     </View>
   );
 }
