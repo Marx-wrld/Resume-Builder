@@ -1,4 +1,4 @@
 # Resume-Builder
-A resume builder app built using React Native
+A resume builder app developed using React Native
 
 **Source code is in the resume folder
