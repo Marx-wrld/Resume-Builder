@@ -32,6 +32,51 @@ export default function ResumeForm({ navigation }) {
     skill: "",
     hobby: "",
   });
+
+  const styles = StyleSheet.create({
+    cont: {
+      flex: 1,
+      backgroundColor: '#36485f',
+      paddingLeft: 40,
+      paddingRight: 40,
+      paddingTop: 40
+    },
+    header: {
+      marginBottom: 20,
+      alignSelf: 'stretch'
+    },
+    details: {
+      marginBottom: 15
+    },
+    headerText: {
+      fontSize: 24,
+      color: '#fff',
+      borderBottomColor: '#199187',
+      paddingBottom: 10,
+      borderBottomWidth: 1
+    },
+    button: {
+      alignSelf: 'stretch',
+      alignItems: 'center',
+      padding: 10,
+      backgroundColor: '#59cbbdd',
+      marginTop: 5,
+      marginBottom: 20
+    },
+    titleText: { 
+      fontWeight: 'bold',
+      color: 'yellow',
+      fontSize: 15,
+      marginBottom: 10
+    },
+    textinput: {
+      alignSelf: 'stretch',
+      height: 40,
+      color: '#d3d3d3',
+      marginBottom: '#f8f8f8',
+      borderBottomWidth: 1
+    }
+  })
   return (
     <View style={styles.container}>
       <View style={styles.header}>
