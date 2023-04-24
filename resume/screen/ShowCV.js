@@ -3,6 +3,43 @@ import { Text, View, StyleSheet, TextInput, Button, TouchableOpacity } from 'rea
 import { useState } from 'react'; 
 
 export default function ShowCV ({route}) {
+
+  const styles = StyleSheet.create({ //we are done with the view, now lets make it look good
+    cont: {
+      flex: 1,
+      backgroundColor: '#36485f',
+      paddingLeft: 40,
+      paddingRight: 40,
+      paddingTop: 40
+    },
+    header: {
+      marginBottom: 20,
+      alignSelf: 'stretch'
+    },
+    details: {
+      marginBottom: 15
+    },
+    headerText: {
+      fontSize: 24,
+      color: '#fff',
+      borderBottomColor: '#199187',
+      paddingBottom: 10,
+      borderBottomWidth: 1
+    },
+    titleText: {
+      fontWeight: 'bold',
+      color: 'yellow',
+      fontSize: 15,
+      marginBottom: 10
+    },
+    key: {
+      fontWeight: 'bold'
+    },
+    text: {
+      color: '#d3d3d3'
+    }
+  })
+
   let dataObj = route.params
 
   return (
@@ -30,4 +67,5 @@ export default function ShowCV ({route}) {
     </View>
     </View>
   )
+  //Both screens are now set next is to make a screen navigator in App.js
 }
