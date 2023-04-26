@@ -18,9 +18,9 @@ export default function ResumeForm({ navigation }) {
     avatarUrl: "",
     phoneNo: "",
     email: "",
-    webiste: "",
+    website: "",
     company: "",
-    jobTitle: "",
+    role: "",
     jobStartDate: "",
     jobEndDate: "",
     experience: "",
@@ -147,11 +147,11 @@ export default function ResumeForm({ navigation }) {
         <TextInput
           style={styles.textinput}
           placeholder="Enter Job Title"
-          value={userDetails.jobTitle}
+          value={userDetails.role}
           onChangeText={(e) => {
             setUserDetails((userDetails) => ({
               ...userDetails,
-              ...{ jobTitle: e },
+              ...{ role: e },
             }));
           }}
         />
@@ -173,7 +173,7 @@ export default function ResumeForm({ navigation }) {
         <TextInput
           style={styles.textinput}
           placeholder="Enter End Date"
-          value={userDetails.jobTitle}
+          value={userDetails.role}
           onChangeText={(e) => {
             setUserDetails((userDetails) => ({
               ...userDetails,
