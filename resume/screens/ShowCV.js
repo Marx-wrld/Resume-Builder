@@ -57,12 +57,50 @@ export default function ShowCV ({route}) {
       <Text style={styles.text}>
         <Text style={styles.key}>Name: </Text>
         {/* We get the name from the fullName property */}
-        <Text>{dataObj}</Text>
+        <Text>{dataObj.fullName}</Text>
       </Text>
       <Text style={styles.text}> 
         <Text style={styles.key}>Professional Title: </Text>
         {/* We get the title from the profTitle property */}
         <Text>{dataObj.profTitle}</Text>
+      </Text>
+    </View>
+
+    <View style={styles.details}>
+      <Text style={styles.titleText}> Contact Details </Text>
+      
+      <Text style={styles.text}>
+        <Text style={styles.key}> Phone Number: </Text>
+        <Text>{dataObj.phoneNo}</Text>
+      </Text>
+
+      <Text style={styles.text}>
+        <Text style={styles.key}>Email: </Text>
+        <Text>{dataObj.email}</Text>
+      </Text>
+
+      <Text style={styles.text}>
+        <Text style={styles.key}> Website: </Text>
+        <Text>{dataObj.website}</Text>
+      </Text>
+    </View>
+
+    <View style={styles.details}>
+      <Text style={styles.titleText}>Previous Job</Text>
+
+      <Text style={styles.text}>
+        <Text styles={styles.key}>Company: </Text>
+        <Text>{dataObj.company}</Text>
+      </Text>
+
+      <Text style={styles.text}>
+        <Text style={styles.key}>Role: </Text>
+        <Text>{dataObj.role}</Text>
+      </Text>
+
+      <Text style={styles.text}>
+        <Text style={styles.key}>Start & End Dates: </Text>
+        <Text>{dataObj.jobStartDate} - {dataObj.jobEndDate}</Text>
       </Text>
     </View>
     </View>
