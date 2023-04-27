@@ -48,6 +48,8 @@ export default function ShowCV ({route}) {
     <View style={styles.header}>
       <Text style={styles.headerText}>Your Resume</Text>
     </View>
+
+  {/*Rendering Personal Details section */}
     <View style={styles.details}>
       <Text style={styles.titleText}>Personal Details</Text>
       <Image source={{ url: dataObj.avatarUrl }} 
@@ -66,6 +68,7 @@ export default function ShowCV ({route}) {
       </Text>
     </View>
 
+{/*Rendering Contact Details Section */}
     <View style={styles.details}>
       <Text style={styles.titleText}> Contact Details </Text>
       
@@ -85,6 +88,7 @@ export default function ShowCV ({route}) {
       </Text>
     </View>
 
+{/*Rendering previous Job Details section */}
     <View style={styles.details}>
       <Text style={styles.titleText}>Previous Job</Text>
 
@@ -103,7 +107,43 @@ export default function ShowCV ({route}) {
         <Text>{dataObj.jobStartDate} - {dataObj.jobEndDate}</Text>
       </Text>
     </View>
+
+  {/*Rendering Profile Details section */}
+
+    <View style={styles.details}>
+         <Text style={styles.titleText}>Profile Details</Text>                 
+          <Text style={styles.text}>
+            <Text style={styles.key}>Profile Summary: </Text>
+            <Text>{dataObj.profSummary}</Text>
+          </Text>    
+
+          <Text style={styles.text}>
+            <Text style={styles.key}>Certificate: </Text>
+            <Text>{dataObj.certificate}</Text>
+          </Text>  
+
+          <Text style={styles.text}>
+            <Text style={styles.key}>College Name: </Text>
+            <Text>{dataObj.collegeName}</Text>
+          </Text>  
+
+          <Text style={styles.text}>
+            <Text style={styles.key}>Start & End Dates: </Text>
+            <Text>{dataObj.colStartDate} - {dataObj.colEndDate}</Text>
+          </Text>      
+
+          <Text style={styles.text}>
+            <Text style={styles.key}>Skill: </Text>
+            <Text>{dataObj.skill}</Text>
+          </Text>     
+
+          <Text style={styles.text}>
+            <Text style={styles.key}>Hobby: </Text>
+            <Text>{dataObj.hobby}</Text>
+          </Text>
+        </View> 
+
     </View>
   )
-  //Both screens are now set next is to make a screen navigator in App.js
+  //Both screens are now set, next is to make a screen navigator in App.js
 }
