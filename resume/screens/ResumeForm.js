@@ -8,7 +8,6 @@ import {
   // TouchableOpacity,
 } from "react-native";
 import { useState } from "react";
-// import { Card } from 'react-native-paper';
 
 export default function ResumeForm({ navigation }) {
   const [userDetails, setUserDetails] = useState({
@@ -16,7 +15,7 @@ export default function ResumeForm({ navigation }) {
     //we will use the setter method setUserDetails to populate the form as the user types into the inputs
 
     fullName: "",
-    avatarUrl: "",  
+    avatarUrl: "",
     phoneNo: "",
     email: "",
     website: "",
@@ -37,47 +36,47 @@ export default function ResumeForm({ navigation }) {
   const styles = StyleSheet.create({
     cont: {
       flex: 1,
-      backgroundColor: '#36485f',
+      backgroundColor: "#36485f",
       paddingLeft: 40,
       paddingRight: 40,
-      paddingTop: 40
+      paddingTop: 40,
     },
     header: {
       marginBottom: 20,
-      alignSelf: 'stretch'
+      alignSelf: "stretch",
     },
     details: {
-      marginBottom: 15
+      marginBottom: 15,
     },
     headerText: {
       fontSize: 24,
-      color: '#fff',
-      borderBottomColor: '#199187',
+      color: "#fff",
+      borderBottomColor: "#199187",
       paddingBottom: 10,
-      borderBottomWidth: 1
+      borderBottomWidth: 1,
     },
     button: {
-      alignSelf: 'stretch',
-      alignItems: 'center',
+      alignSelf: "stretch",
+      alignItems: "center",
       padding: 10,
-      backgroundColor: '#59cbbdd',
+      backgroundColor: "#59cbbdd",
       marginTop: 5,
-      marginBottom: 20
+      marginBottom: 20,
     },
-    titleText: { 
-      fontWeight: 'bold',
-      color: 'yellow',
+    titleText: {
+      fontWeight: "bold",
+      color: "yellow",
       fontSize: 15,
-      marginBottom: 10
+      marginBottom: 10,
     },
     textinput: {
-      alignSelf: 'stretch',
+      alignSelf: "stretch",
       height: 40,
-      color: '#d3d3d3',
-      marginBottom: '#f8f8f8',
-      borderBottomWidth: 1
-    }
-  })
+      color: "#d3d3d3",
+      marginBottom: "#f8f8f8",
+      borderBottomWidth: 1,
+    },
+  });
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -128,42 +127,46 @@ export default function ResumeForm({ navigation }) {
         />
       </View>
 
-    {/* User Conatct Details section */}
+      {/* User Conatct Details section */}
 
       <View style={styles.details}>
-         <Text style={styles.titleText}>Contact Details</Text>        
-          <TextInput style={styles.textinput} 
-            placeholder="Enter your phone number" 
-            value={userDetails.phoneNo}  
-            onChangeText={(e) => {
-              setUserDetails(userDetails => ({
-                ...userDetails, ...{'phoneNo': e}
-              }));
-            }}               
-          />          
-          <TextInput style={styles.textinput} 
-            placeholder="Enter your email" 
-            value={userDetails.email}     
-            onChangeText={(e) => {
-              setUserDetails(userDetails => ({
-                ...userDetails, ...{'email': e}
-              }));
-            }}                                           
-          />
-          <TextInput 
-            style={styles.textinput} 
-            placeholder="Enter your website link" 
-            value={userDetails.website}     
-            onChangeText={(e) => {
-              setUserDetails(userDetails => ({
-                ...userDetails, ...{'website': e}
-              }));
-            }}     
-          />
-        </View>      
+        <Text style={styles.titleText}>Contact Details</Text>
+        <TextInput
+          style={styles.textinput}
+          placeholder="Enter your phone number"
+          value={userDetails.phoneNo}
+          onChangeText={(e) => {
+            setUserDetails((userDetails) => ({
+              ...userDetails,
+              ...{ phoneNo: e },
+            }));
+          }}
+        />
+        <TextInput
+          style={styles.textinput}
+          placeholder="Enter your email"
+          value={userDetails.email}
+          onChangeText={(e) => {
+            setUserDetails((userDetails) => ({
+              ...userDetails,
+              ...{ email: e },
+            }));
+          }}
+        />
+        <TextInput
+          style={styles.textinput}
+          placeholder="Enter your website link"
+          value={userDetails.website}
+          onChangeText={(e) => {
+            setUserDetails((userDetails) => ({
+              ...userDetails,
+              ...{ website: e },
+            }));
+          }}
+        />
+      </View>
 
-
-    {/*Input group for previous job details */}
+      {/*Input group for previous job details */}
 
       <View style={styles.details}>
         <Text style={styles.titleText}>Previous Job</Text>
@@ -193,8 +196,7 @@ export default function ResumeForm({ navigation }) {
         />
 
         <TextInput
-
-        //You can use react-native-date-picker library aside using the textinput for the date to make the project more interesting
+          //You can use react-native-date-picker library aside using the textinput for the date to make the project more interesting
           style={styles.textinput}
           placeholder="Enter Start Date"
           value={userDetails.jobStartDate}
@@ -231,68 +233,97 @@ export default function ResumeForm({ navigation }) {
         />
       </View>
 
-    {/*User Profile Details section*/}
+      {/*User Profile Details section*/}
 
       <View style={styles.details}>
-         <Text style={styles.titleText}>Profile Details</Text>                  
-          <TextInput style={styles.textinput} placeholder="Enter your profile summary" value={userDetails.profSummary}          
+        <Text style={styles.titleText}>Profile Details</Text>
+        <TextInput
+          style={styles.textinput}
+          placeholder="Enter your profile summary"
+          value={userDetails.profSummary}
           onChangeText={(e) => {
-              setUserDetails(userDetails => ({
-                ...userDetails, ...{'profSummary': e}
-              }));
-            }}
-          />
-          <TextInput style={styles.textinput} placeholder="Enter your certificate" value={userDetails.certificate}          
+            setUserDetails((userDetails) => ({
+              ...userDetails,
+              ...{ profSummary: e },
+            }));
+          }}
+        />
+
+        <TextInput
+          style={styles.textinput}
+          placeholder="Enter your certificate"
+          value={userDetails.certificate}
           onChangeText={(e) => {
-              setUserDetails(userDetails => ({
-                ...userDetails, ...{'certificate': e}
-              }));
-            }}
-          />
-          <TextInput style={styles.textinput} placeholder="Enter your college name" value={userDetails.collegeName}          
+            setUserDetails((userDetails) => ({
+              ...userDetails,
+              ...{ certificate: e },
+            }));
+          }}
+        />
+        <TextInput
+          style={styles.textinput}
+          placeholder="Enter your college name"
+          value={userDetails.collegeName}
           onChangeText={(e) => {
-              setUserDetails(userDetails => ({
-                ...userDetails, ...{'collegeName': e}
-              }));
-            }}
-          />
-          <TextInput style={styles.textinput} placeholder="Enter start date (e.g. 20/04/2023)" value={userDetails.colStartDate}          
+            setUserDetails((userDetails) => ({
+              ...userDetails,
+              ...{ collegeName: e },
+            }));
+          }}
+        />
+        <TextInput
+          style={styles.textinput}
+          placeholder="Enter start date (e.g. 20/04/2023)"
+          value={userDetails.colStartDate}
           onChangeText={(e) => {
-              setUserDetails(userDetails => ({
-                ...userDetails, ...{'colStartDate': e}
-              }));
-            }}
-          />
-          <TextInput style={styles.textinput} placeholder="Enter end date (e.g. 10/11/2025)" value={userDetails.colEndDate}
+            setUserDetails((userDetails) => ({
+              ...userDetails,
+              ...{ colStartDate: e },
+            }));
+          }}
+        />
+        <TextInput
+          style={styles.textinput}
+          placeholder="Enter end date (e.g. 10/11/2025)"
+          value={userDetails.colEndDate}
           onChangeText={(e) => {
-              setUserDetails(userDetails => ({
-                ...userDetails, ...{'colEndDate': e}
-              }));
-            }}
-          />
-          <TextInput style={styles.textinput} placeholder="Enter your best skill" value={userDetails.skill}                   
+            setUserDetails((userDetails) => ({
+              ...userDetails,
+              ...{ colEndDate: e },
+            }));
+          }}
+        />
+        <TextInput
+          style={styles.textinput}
+          placeholder="Enter your best skill"
+          value={userDetails.skill}
           onChangeText={(e) => {
-              setUserDetails(userDetails => ({
-                ...userDetails, ...{'skill': e}
-              }));
-            }}
-          />
-          <TextInput style={styles.textinput} placeholder="Enter your hobby" value={userDetails.hobby}         
+            setUserDetails((userDetails) => ({
+              ...userDetails,
+              ...{ skill: e },
+            }));
+          }}
+        />
+
+        <TextInput
+          style={styles.textinput}
+          placeholder="Enter your hobby"
+          value={userDetails.hobby}
           onChangeText={(e) => {
-              setUserDetails(userDetails => ({
-                ...userDetails, ...{'hobby': e}
-              }));
-            }}
-          />
-        </View>      
+            setUserDetails((userDetails) => ({
+              ...userDetails,
+              ...{ hobby: e },
+            }));
+          }}
+        />
+      </View>
 
       <Button
-      //when the user presses the button to submit his/her details he/she is navigated to the ShowCV screen
+        //when the user presses the button to submit his/her details he/she is navigated to the ShowCV screen
         title="Create Resume"
         style={styles.button}
-        onPress={() => navigation.navigate('ShowCV', userDetails)}
-      >
-      </Button>
+        onPress={() => navigation.navigate("ShowCV", userDetails)}
+      ></Button>
     </View>
   );
 }
