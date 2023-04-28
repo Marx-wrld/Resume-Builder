@@ -8,7 +8,6 @@ import {
   // TouchableOpacity,
 } from "react-native";
 import { useState } from "react";
-// import { Card } from 'react-native-paper';
 
 export default function ResumeForm({ navigation }) {
   const [userDetails, setUserDetails] = useState({
@@ -242,6 +241,7 @@ export default function ResumeForm({ navigation }) {
               }));
             }}
           />
+
           <TextInput style={styles.textinput} placeholder="Enter your certificate" value={userDetails.certificate}          
           onChangeText={(e) => {
               setUserDetails(userDetails => ({
@@ -277,6 +277,7 @@ export default function ResumeForm({ navigation }) {
               }));
             }}
           />
+
           <TextInput style={styles.textinput} placeholder="Enter your hobby" value={userDetails.hobby}         
           onChangeText={(e) => {
               setUserDetails(userDetails => ({

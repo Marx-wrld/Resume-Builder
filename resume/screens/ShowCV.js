@@ -5,7 +5,7 @@ import { useState } from 'react';
 export default function ShowCV ({route}) {
 
   const styles = StyleSheet.create({ //we are done with the view, now lets make it look good
-    cont: {
+    container: {
       flex: 1,
       backgroundColor: '#36485f',
       paddingLeft: 40,
