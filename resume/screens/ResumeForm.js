@@ -5,9 +5,10 @@ import {
   StyleSheet,
   TextInput,
   Button,
-  TouchableOpacity,
+  // TouchableOpacity,
 } from "react-native";
 import { useState } from "react";
+// import { Card } from 'react-native-paper';
 
 export default function ResumeForm({ navigation }) {
   const [userDetails, setUserDetails] = useState({
@@ -15,7 +16,7 @@ export default function ResumeForm({ navigation }) {
     //we will use the setter method setUserDetails to populate the form as the user types into the inputs
 
     fullName: "",
-    avatarUrl: "",
+    avatarUrl: "",  
     phoneNo: "",
     email: "",
     website: "",
@@ -80,7 +81,7 @@ export default function ResumeForm({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.headerText}>Resume Builder</Text>
+        <Text style={styles.headerText}>Resume Builder / CV Maker</Text>
       </View>
 
       {/*Creating the various input groups */}

@@ -14,12 +14,12 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen 
-          name='Resume'
+          name='RESUME'
           component={ResumeForm}
         />
 
         <Stack.Screen
-          name='ShowCV'
+          name='View CV'
           component={ShowCV}
         />
       </Stack.Navigator>
