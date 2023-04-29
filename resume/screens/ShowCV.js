@@ -60,7 +60,7 @@ export default function ShowCV({ route }) {
       <View style={styles.details}>
         <Text style={styles.titleText}>Personal Details</Text>
         <Image
-          source={{ url: dataObj.avatarUrl }}
+          source={{ uri: dataObj.avatarUrl }}
           //We get the imageUrl from the avatarUrl property
           style={{ width: 80, height: 80 }}
         />

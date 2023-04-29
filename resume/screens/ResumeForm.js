@@ -37,7 +37,7 @@ export default function ResumeForm({ navigation }) {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: "#36485f",
+      backgroundColor: "#004987",
       paddingLeft: 40,
       paddingRight: 40,
       paddingTop: 40,
@@ -47,7 +47,8 @@ export default function ResumeForm({ navigation }) {
       alignSelf: "stretch",
     },
     details: {
-      marginBottom: 15,
+      backgroundColor: "#004987",
+      marginBottom: 15
     },
     headerText: {
       fontSize: 24,
@@ -66,7 +67,7 @@ export default function ResumeForm({ navigation }) {
     },
     titleText: {
       fontWeight: "bold",
-      color: "yellow",
+      color: "gold",
       fontSize: 15,
       marginBottom: 10,
     },
