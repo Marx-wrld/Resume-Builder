@@ -15,12 +15,12 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen 
-          name='RESUME'
+          name='Resume'
           component={ResumeForm}
         />
 
         <Stack.Screen
-          name='ShowCV'
+          name='View CV'
           component={ShowCV}
         />
       </Stack.Navigator>
