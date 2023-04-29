@@ -20,7 +20,7 @@ export default function App() {
         />
 
         <Stack.Screen
-          name='View CV'
+          name='ShowCV'
           component={ShowCV}
         />
       </Stack.Navigator>
