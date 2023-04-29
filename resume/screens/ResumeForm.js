@@ -10,6 +10,7 @@ import {
 import { useState } from "react";
 
 export default function ResumeForm({ navigation }) {
+
   const [userDetails, setUserDetails] = useState({
     //contains information the user is required to provide via the form inputs
     //we will use the setter method setUserDetails to populate the form as the user types into the inputs
@@ -34,7 +35,7 @@ export default function ResumeForm({ navigation }) {
   });
 
   const styles = StyleSheet.create({
-    cont: {
+    container: {
       flex: 1,
       backgroundColor: "#36485f",
       paddingLeft: 40,
@@ -97,7 +98,7 @@ export default function ResumeForm({ navigation }) {
           onChangeText={(e) => {
             setUserDetails((userDetails) => ({
               ...userDetails,
-              ...{ fullName: e },
+              ...{ 'fullName': e },
             }));
           }}
         />
@@ -109,7 +110,7 @@ export default function ResumeForm({ navigation }) {
           onChangeText={(e) => {
             setUserDetails((userDetails) => ({
               ...userDetails,
-              ...{ avatarUrl: e },
+              ...{ 'avatarUrl': e },
             }));
           }}
         />
@@ -121,7 +122,7 @@ export default function ResumeForm({ navigation }) {
           onChangeText={(e) => {
             setUserDetails((userDetails) => ({
               ...userDetails,
-              ...{ profTitle: e },
+              ...{ 'profTitle': e },
             }));
           }}
         />
@@ -138,7 +139,7 @@ export default function ResumeForm({ navigation }) {
           onChangeText={(e) => {
             setUserDetails((userDetails) => ({
               ...userDetails,
-              ...{ phoneNo: e },
+              ...{ 'phoneNo': e },
             }));
           }}
         />
@@ -149,7 +150,7 @@ export default function ResumeForm({ navigation }) {
           onChangeText={(e) => {
             setUserDetails((userDetails) => ({
               ...userDetails,
-              ...{ email: e },
+              ...{ 'email': e },
             }));
           }}
         />
@@ -160,7 +161,7 @@ export default function ResumeForm({ navigation }) {
           onChangeText={(e) => {
             setUserDetails((userDetails) => ({
               ...userDetails,
-              ...{ website: e },
+              ...{ 'website': e },
             }));
           }}
         />
@@ -178,7 +179,7 @@ export default function ResumeForm({ navigation }) {
           onChangeText={(e) => {
             setUserDetails((userDetails) => ({
               ...userDetails,
-              ...{ company: e },
+              ...{ 'company': e },
             }));
           }}
         />
@@ -190,7 +191,7 @@ export default function ResumeForm({ navigation }) {
           onChangeText={(e) => {
             setUserDetails((userDetails) => ({
               ...userDetails,
-              ...{ role: e },
+              ...{ 'role': e },
             }));
           }}
         />
@@ -203,7 +204,7 @@ export default function ResumeForm({ navigation }) {
           onChangeText={(e) => {
             setUserDetails((userDetails) => ({
               ...userDetails,
-              ...{ jobStartDate: e },
+              ...{ 'jobStartDate': e },
             }));
           }}
         />
@@ -215,7 +216,7 @@ export default function ResumeForm({ navigation }) {
           onChangeText={(e) => {
             setUserDetails((userDetails) => ({
               ...userDetails,
-              ...{ jobEndDate: e },
+              ...{ 'jobEndDate': e },
             }));
           }}
         />
@@ -227,7 +228,7 @@ export default function ResumeForm({ navigation }) {
           onChangeText={(e) => {
             setUserDetails((userDetails) => ({
               ...userDetails,
-              ...{ experience: e },
+              ...{ 'experience': e },
             }));
           }}
         />
@@ -244,7 +245,7 @@ export default function ResumeForm({ navigation }) {
           onChangeText={(e) => {
             setUserDetails((userDetails) => ({
               ...userDetails,
-              ...{ profSummary: e },
+              ...{ 'profSummary': e },
             }));
           }}
         />
@@ -256,7 +257,7 @@ export default function ResumeForm({ navigation }) {
           onChangeText={(e) => {
             setUserDetails((userDetails) => ({
               ...userDetails,
-              ...{ certificate: e },
+              ...{ 'certificate': e },
             }));
           }}
         />
@@ -267,7 +268,7 @@ export default function ResumeForm({ navigation }) {
           onChangeText={(e) => {
             setUserDetails((userDetails) => ({
               ...userDetails,
-              ...{ collegeName: e },
+              ...{ 'collegeName': e },
             }));
           }}
         />
@@ -278,7 +279,7 @@ export default function ResumeForm({ navigation }) {
           onChangeText={(e) => {
             setUserDetails((userDetails) => ({
               ...userDetails,
-              ...{ colStartDate: e },
+              ...{ 'colStartDate': e },
             }));
           }}
         />
@@ -289,7 +290,7 @@ export default function ResumeForm({ navigation }) {
           onChangeText={(e) => {
             setUserDetails((userDetails) => ({
               ...userDetails,
-              ...{ colEndDate: e },
+              ...{ 'colEndDate': e },
             }));
           }}
         />
@@ -300,7 +301,7 @@ export default function ResumeForm({ navigation }) {
           onChangeText={(e) => {
             setUserDetails((userDetails) => ({
               ...userDetails,
-              ...{ skill: e },
+              ...{ 'skill': e },
             }));
           }}
         />
@@ -312,7 +313,7 @@ export default function ResumeForm({ navigation }) {
           onChangeText={(e) => {
             setUserDetails((userDetails) => ({
               ...userDetails,
-              ...{ hobby: e },
+              ...{ 'hobby': e },
             }));
           }}
         />
