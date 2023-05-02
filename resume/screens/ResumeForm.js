@@ -129,13 +129,13 @@ export default function ResumeForm({ navigation }) {
         />
       </View>
 
-      {/* User Conatct Details section */}
+      {/* User Contact Details section */}
 
       <View style={styles.details}>
         <Text style={styles.titleText}>Contact Details</Text>
         <TextInput
           style={styles.textinput}
-          placeholder="Enter your phone number"
+          placeholder="Enter your Phone Number"
           value={userDetails.phoneNo}
           onChangeText={(e) => {
             setUserDetails((userDetails) => ({
@@ -146,7 +146,7 @@ export default function ResumeForm({ navigation }) {
         />
         <TextInput
           style={styles.textinput}
-          placeholder="Enter your email"
+          placeholder="Enter your Email"
           value={userDetails.email}
           onChangeText={(e) => {
             setUserDetails((userDetails) => ({
@@ -241,7 +241,7 @@ export default function ResumeForm({ navigation }) {
         <Text style={styles.titleText}>Profile Details</Text>
         <TextInput
           style={styles.textinput}
-          placeholder="Enter your profile summary"
+          placeholder="Enter your Profile summary"
           value={userDetails.profSummary}
           onChangeText={(e) => {
             setUserDetails((userDetails) => ({
