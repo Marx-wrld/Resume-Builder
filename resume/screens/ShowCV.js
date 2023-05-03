@@ -59,7 +59,7 @@ export default function ShowCV({ route }) {
       {/*Rendering Personal Details section */}
       <View style={styles.details}>
         <Text style={styles.titleText}>Personal Details</Text>
-        <Image
+        <img
           source={{ uri: dataObj.avatarUrl }}
           //We get the imageUrl from the avatarUrl property
           style={{ width: 80, height: 80 }}
@@ -115,6 +115,11 @@ export default function ShowCV({ route }) {
           <Text>
             {dataObj.jobStartDate} - {dataObj.jobEndDate}
           </Text>
+          </Text>
+
+          <Text style={styles.text}>
+            <Text style={styles.key}>Job Experience: </Text>
+            <Text>{dataObj.experience}</Text>
         </Text>
       </View>
 
