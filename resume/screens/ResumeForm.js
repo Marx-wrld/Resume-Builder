@@ -47,7 +47,6 @@ export default function ResumeForm({ navigation }) {
       alignSelf: "stretch",
     },
     details: {
-      backgroundColor: "#004987",
       marginBottom: 15
     },
     headerText: {
@@ -97,7 +96,7 @@ export default function ResumeForm({ navigation }) {
           placeholder="Enter your Full Name"
           value={userDetails.fullName}
           onChangeText={(e) => {
-            setUserDetails((userDetails) => ({
+            setUserDetails(userDetails => ({
               ...userDetails,
               ...{ 'fullName': e },
             }));
@@ -109,7 +108,7 @@ export default function ResumeForm({ navigation }) {
           placeholder="Enter your Avatar URL"
           value={userDetails.avatarUrl}
           onChangeText={(e) => {
-            setUserDetails((userDetails) => ({
+            setUserDetails(userDetails => ({
               ...userDetails,
               ...{ 'avatarUrl': e },
             }));
@@ -121,7 +120,7 @@ export default function ResumeForm({ navigation }) {
           placeholder="Enter your Professional Title"
           value={userDetails.profTitle}
           onChangeText={(e) => {
-            setUserDetails((userDetails) => ({
+            setUserDetails(userDetails => ({
               ...userDetails,
               ...{ 'profTitle': e },
             }));
@@ -129,7 +128,7 @@ export default function ResumeForm({ navigation }) {
         />
       </View>
 
-      {/* User Conatct Details section */}
+      {/* User Contact Details section */}
 
       <View style={styles.details}>
         <Text style={styles.titleText}>Contact Details</Text>
@@ -138,7 +137,7 @@ export default function ResumeForm({ navigation }) {
           placeholder="Enter your phone number"
           value={userDetails.phoneNo}
           onChangeText={(e) => {
-            setUserDetails((userDetails) => ({
+            setUserDetails(userDetails => ({
               ...userDetails,
               ...{ 'phoneNo': e },
             }));
@@ -149,7 +148,7 @@ export default function ResumeForm({ navigation }) {
           placeholder="Enter your email"
           value={userDetails.email}
           onChangeText={(e) => {
-            setUserDetails((userDetails) => ({
+            setUserDetails(userDetails => ({
               ...userDetails,
               ...{ 'email': e },
             }));
@@ -160,7 +159,7 @@ export default function ResumeForm({ navigation }) {
           placeholder="Enter your website link"
           value={userDetails.website}
           onChangeText={(e) => {
-            setUserDetails((userDetails) => ({
+            setUserDetails(userDetails => ({
               ...userDetails,
               ...{ 'website': e },
             }));
@@ -178,7 +177,7 @@ export default function ResumeForm({ navigation }) {
           placeholder="Enter company Name"
           value={userDetails.company}
           onChangeText={(e) => {
-            setUserDetails((userDetails) => ({
+            setUserDetails(userDetails => ({
               ...userDetails,
               ...{ 'company': e },
             }));
@@ -190,7 +189,7 @@ export default function ResumeForm({ navigation }) {
           placeholder="Enter Job Title"
           value={userDetails.role}
           onChangeText={(e) => {
-            setUserDetails((userDetails) => ({
+            setUserDetails(userDetails => ({
               ...userDetails,
               ...{ 'role': e },
             }));
@@ -203,7 +202,7 @@ export default function ResumeForm({ navigation }) {
           placeholder="Enter Start Date"
           value={userDetails.jobStartDate}
           onChangeText={(e) => {
-            setUserDetails((userDetails) => ({
+            setUserDetails(userDetails => ({
               ...userDetails,
               ...{ 'jobStartDate': e },
             }));
@@ -215,7 +214,7 @@ export default function ResumeForm({ navigation }) {
           placeholder="Enter End Date"
           value={userDetails.role}
           onChangeText={(e) => {
-            setUserDetails((userDetails) => ({
+            setUserDetails(userDetails => ({
               ...userDetails,
               ...{ 'jobEndDate': e },
             }));
@@ -227,7 +226,7 @@ export default function ResumeForm({ navigation }) {
           placeholder="Enter your Experience"
           value={userDetails.experience}
           onChangeText={(e) => {
-            setUserDetails((userDetails) => ({
+            setUserDetails(userDetails => ({
               ...userDetails,
               ...{ 'experience': e },
             }));
@@ -244,7 +243,7 @@ export default function ResumeForm({ navigation }) {
           placeholder="Enter your profile summary"
           value={userDetails.profSummary}
           onChangeText={(e) => {
-            setUserDetails((userDetails) => ({
+            setUserDetails(userDetails => ({
               ...userDetails,
               ...{ 'profSummary': e },
             }));
@@ -256,7 +255,7 @@ export default function ResumeForm({ navigation }) {
           placeholder="Enter your certificate"
           value={userDetails.certificate}
           onChangeText={(e) => {
-            setUserDetails((userDetails) => ({
+            setUserDetails(userDetails => ({
               ...userDetails,
               ...{ 'certificate': e },
             }));
@@ -267,7 +266,7 @@ export default function ResumeForm({ navigation }) {
           placeholder="Enter your college name"
           value={userDetails.collegeName}
           onChangeText={(e) => {
-            setUserDetails((userDetails) => ({
+            setUserDetails(userDetails => ({
               ...userDetails,
               ...{ 'collegeName': e },
             }));
@@ -278,7 +277,7 @@ export default function ResumeForm({ navigation }) {
           placeholder="Enter start date (e.g. 20/04/2023)"
           value={userDetails.colStartDate}
           onChangeText={(e) => {
-            setUserDetails((userDetails) => ({
+            setUserDetails(userDetails => ({
               ...userDetails,
               ...{ 'colStartDate': e },
             }));
@@ -289,7 +288,7 @@ export default function ResumeForm({ navigation }) {
           placeholder="Enter end date (e.g. 10/11/2025)"
           value={userDetails.colEndDate}
           onChangeText={(e) => {
-            setUserDetails((userDetails) => ({
+            setUserDetails(userDetails => ({
               ...userDetails,
               ...{ 'colEndDate': e },
             }));
@@ -300,7 +299,7 @@ export default function ResumeForm({ navigation }) {
           placeholder="Enter your best skill"
           value={userDetails.skill}
           onChangeText={(e) => {
-            setUserDetails((userDetails) => ({
+            setUserDetails(userDetails => ({
               ...userDetails,
               ...{ 'skill': e },
             }));
@@ -312,7 +311,7 @@ export default function ResumeForm({ navigation }) {
           placeholder="Enter your hobby"
           value={userDetails.hobby}
           onChangeText={(e) => {
-            setUserDetails((userDetails) => ({
+            setUserDetails(userDetails => ({
               ...userDetails,
               ...{ 'hobby': e },
             }));

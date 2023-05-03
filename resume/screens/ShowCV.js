@@ -47,7 +47,7 @@ export default function ShowCV({ route }) {
     },
   });
 
-  let dataObj = route.params;
+  let dataObj = route.params
 
   return (
     //Creating the resume ShowCV screen
@@ -72,7 +72,7 @@ export default function ShowCV({ route }) {
         <Text style={styles.text}>
           <Text style={styles.key}>Professional Title: </Text>
           {/* We get the title from the profTitle property */}
-          <Text>{dataObj.profTitle}</Text>
+          <Text>{dataObj.fullName}</Text>
         </Text>
       </View>
 
