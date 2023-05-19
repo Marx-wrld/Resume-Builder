@@ -1,6 +1,6 @@
 # Resume-Builder
-A simple client side resume builder app developed using React Native
-
-**Source code is in the resume folder
-
-This project is purely a client side application and does not store any user information  to the server side
+Creating a resume builder application using React, Node.js and the OpenAI API.
+- I'll be using OpenAI GPT3 for this app.
+- ExpressJS is a fast, minimalist framework that provides several features for building web applications in Node.js, 
+- CORS is a Node.js  package that allows communication between different domains.
+- Nodemon is a Node.js tool that automatically restarts the server after detecting file changes.
