@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 const ErrorPage = () => {
   return (
     <div className='app'>
-      <h1>
+      <h3>
         You've not provided your details. Kindly head back to the {" "}
         <Link to="/">Homepage</Link>
-      </h1>
+      </h3>
     </div>
   );
 };
