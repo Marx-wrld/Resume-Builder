@@ -28,7 +28,7 @@ const Home = () => {
 
     //Updates the state with users' input
     const handleAddCompany = () =>
-        setCompanyInfo([...comapnyInfo, { name: "", position: ""}]);
+        setCompanyInfo([...companyInfo, { name: "", position: ""}]);
 
     //removes a selected item from the list
     const handleRemoveCompany = (index) => {
