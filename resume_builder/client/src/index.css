@@ -1,4 +1,4 @@
-@import url("http://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
 
 *{
   font-family: "Space-Grotesk", sans-serif;
@@ -24,7 +24,7 @@ h3{
 }
 button{
   padding: 15px;
-  curosr: pointer;
+  cursor: pointer;
   outline: none;
   background-color: #5d3891;
   border: none;
@@ -47,7 +47,7 @@ button{
 .nestedContainer{
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   width: 100%;
 }
 .companies{
@@ -62,7 +62,7 @@ button{
   width: 50%;
 }
 #addBtn{
-  bakground-color: green;
+  background-color: green;
   margin-right: 5px;
 }
 #deleteBtn{
@@ -76,7 +76,7 @@ button{
   width: 80%;
   margin: 0 auto;
   min-height: 10vh;
-  background-color: #eBe2e2;
+  background-color: #e8e2e2;
   padding: 30px;
   border-radius: 3px 3px 0  0;
   display: flex;
