@@ -7,7 +7,7 @@ const Home = () => {
     const [currentPosition, setCurrentPosition] = useState("");
     const [currentLength, setCurrentLength] = useState(1);
     const [currentTechnologies, setCurrentTechnologies] = useState("");
-    const [headShot, setHeadShot] = useState(null);
+    const [profileImg, setProfileImg] = useState(null);
     const [loading, setLoading] = useState(false);
 
     const handleSubmit = (e) => {
@@ -17,10 +17,33 @@ const Home = () => {
             currentPosition,
             currentLength,
             currentTechnologies,
-            headShot
+            profileImg
         });
         setLoading(true);
     };
+    //Array that holds the users' previous work experience, so we add a new state to hold the array of job descriptions
+    const [companyInfo, setCompanyInfo] = useState([{name: "", position: ""}]);
+
+    //The functions below help with updating the state
+
+    //Updates the state with users' input
+    const handleAddCompany = () =>
+        setCompanyInfo([...comapnyInfo, { name: "", position: ""}]);
+
+    //removes a selected item from the list
+    const handleRemoveCompany = (index) => {
+        const list = [...companyInfo];
+        list.splice(index, 1);
+        setCompanyInfo(list);
+    };
+    //Updates an item within the list
+    const handleUpdateCompany = (e, index) => {
+        const { name, value } = e.target;
+        const list = [...companyInfo];
+        list[index][name] = value;
+        setCompanyInfo(list);
+    };
+
     //renders the loading component you submit the form
      if (loading) {
         return <Loading />;
@@ -35,7 +58,7 @@ const Home = () => {
                 encType='multipart/form-data'
             >
                 <label htmlFor="fullName">
-                    Enter your full name
+                    Enter Your Full Name
                 </label>
                 <input
                     type="text"
@@ -59,8 +82,6 @@ const Home = () => {
                             onChange={(e) => setCurrentPosition(e.target.value)}
                         />
                     </div>
-                </div>
-                <div className="nestedContainer">
                     <div>
                         <label htmlFor="currentLength">
                             For How Long? (years)
@@ -74,11 +95,9 @@ const Home = () => {
                             onChange={(e) => setCurrentLength(e.target.value)}
                         />
                     </div>
-                </div>
-                <div className="nestedContainer">
                     <div>
                         <label htmlFor="currentTechnologies">
-                            Technologies used
+                            Technologies Used
                         </label>
                         <input
                             type="text"
@@ -98,8 +117,8 @@ const Home = () => {
                     name='photo'
                     required
                     id="photo"
-                    accept='image/x-png, image-jpeg'
-                    onChange={(e) => setHeadShot(e.target.files[0])}
+                    accept='image/x-png, image/jpeg'
+                    onChange={(e) => setProfileImg(e.target.files[0])}
                 />
 
                 <button>CREATE RESUME</button>
