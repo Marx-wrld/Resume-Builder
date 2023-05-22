@@ -1,6 +1,7 @@
 import React from 'react';
 import ErrorPage from "./ErrorPage";
 
+//This code shows the resume generated from the OpenAI API ina a printable format.
 const Resume = ({result}) => {
   if (JSON.stringify(result) === "{}"){
     return <ErrorPage />;

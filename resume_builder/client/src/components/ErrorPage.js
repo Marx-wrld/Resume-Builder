@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
+
+//This errorPage file displays the component below when users navigate directly to the resume page
 const ErrorPage = () => {
   return (
     <div className='app'>

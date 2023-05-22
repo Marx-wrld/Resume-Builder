@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Candara:wght@300;400;500;600;700&display=swap");
 
+/* CSS styling for our entire project */
 *{
   font-family: "Candara", sans-serif;
   box-sizing: border-box;
