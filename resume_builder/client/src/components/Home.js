@@ -144,6 +144,9 @@ const Home = () => {
                 />
 
                 <h3> Companies You've Worked At</h3>
+            {/* The code below maps through the elements within the companyInfo array and displays them on the webpage.*/}
+            {/* The handleUpdateCompany function runs when a user updates the input field  */}
+            {/* The handleRemoveCompany removes an item from the list of elements, and the handleAddCompany adds a new input field */}
 
                 {companyInfo.map((index => (
                     <div className='nestedContainer' key={index}>
