@@ -110,7 +110,7 @@ const Home = () => {
                     </div>
                 </div>
                 <label htmlFor="photo">
-                    Upload your profile image
+                    Upload Your Profile Image
                 </label>
                 <input
                     type="file"
@@ -121,6 +121,49 @@ const Home = () => {
                     onChange={(e) => setProfileImg(e.target.files[0])}
                 />
 
+                <h3> Companies You've Worked At</h3>
+                
+                {companyInfo.map((index => (
+                    <div className='nestedContainer' key={index}>
+                        <div className='companies'>
+                            <label htmlFor="name">
+                                Company name
+                            </label>
+                            &nbsp;
+                            <input
+                                type="text"
+                                name='name'
+                                required
+                                onChange={(e) => handleUpdateCompany(e, index)} 
+                            />
+                        </div>
+                        <div className='companies'>
+                            <label htmlFor="position">
+                                Position Held
+                            </label>
+                            &nbsp;
+                            <input 
+                                type="text"
+                                name="position"
+                                required
+                                onChange={(e) => handleUpdateCompany(e, index)}
+                            />
+                        </div>
+
+                        <div className="btn__group">
+                            {companyInfo.length - 1 === index && companyInfo.length < 4 && (
+                                <button id="addBtn" onClick={handleAddCompany}>
+                                    Add
+                                </button>
+                            )}
+                            {companyInfo.length > 1 && (
+                                <button id="deleteBtn" onClick={() => handleRemoveCompany(index)}>
+                                    Del
+                                </button>
+                            )}
+                        </div>
+                    </div>
+                )))}
                 <button>CREATE RESUME</button>
             </form>
 
