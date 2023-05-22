@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Loading  from "./Loading";
+import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
 
@@ -9,9 +11,27 @@ const Home = () => {
     const [currentTechnologies, setCurrentTechnologies] = useState("");
     const [profileImg, setProfileImg] = useState(null);
     const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        const formData = new FormData();
+        formData.append("profileImgImage", profileImg, profileImg.name);
+        formData.append("fullName", fullName);
+        formData.append("currentPosition", currentPosition);
+        formData.append("currentLength", currentLength);
+        formData.append("currentTechnologies", currentTechnologies);
+        formData.append("workHistory", JSON.stringify(companyInfo));
+
+        axios.post("http://localhost:4000/resume/create", formData, {}).then((res) => {
+            if (res.data.message){
+                console.log(res.data.data);
+                navigate("/resume");
+            }
+        }).catch((err) => console.error(err));
+        setLoading(true);
+
         console.log({
             fullName,
             currentPosition,
@@ -21,6 +41,7 @@ const Home = () => {
         });
         setLoading(true);
     };
+
     //Array that holds the users' previous work experience, so we add a new state to hold the array of job descriptions
     const [companyInfo, setCompanyInfo] = useState([{name: "", position: ""}]);
 
@@ -48,6 +69,7 @@ const Home = () => {
      if (loading) {
         return <Loading />;
     }
+
     return (
         <div className='app'>
             <h1>Resume Builder</h1>
@@ -122,7 +144,7 @@ const Home = () => {
                 />
 
                 <h3> Companies You've Worked At</h3>
-                
+
                 {companyInfo.map((index => (
                     <div className='nestedContainer' key={index}>
                         <div className='companies'>
