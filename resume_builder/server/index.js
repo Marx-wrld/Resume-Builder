@@ -35,19 +35,19 @@ app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);
 });
 
-// app.post("/resume/create", upload.single("profileImg"), async(req, res) => {
-//     const {
-//         fullName,
-//         currencyPosition,
-//         currentLength,
-//         currentTechnologies,
-//         workHistory,
-//     } = req.body;
+app.post("/resume/create", upload.single("profileImg"), async(req, res) => {
+    const {
+        fullName,
+        currencyPosition,
+        currentLength,
+        currentTechnologies,
+        workHistory,
+    } = req.body;
 
-//     console.log(req.body);
+    console.log(req.body);
     
-//     res.json({
-//         message: "Request Successful!",
-//         data: {}
-//     });
-// });
+    res.json({
+        message: "Request Successful!",
+        data: {}
+    });
+});
