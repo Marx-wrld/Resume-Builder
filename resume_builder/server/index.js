@@ -3,7 +3,7 @@ const cors = require("cors");
 const app = express();
 const PORT = 4000;
 
-const multer  = require("multer");
+const multer = require("multer");
 const path = require("path")
 
 //storage variable containing multer.diskStorage gives us full control of storing the images. 
@@ -32,7 +32,7 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-const GPTFunction = async(text) => {
+const GPTFunction = async (text) => {
     const response = await openai.createCompletion({
         model: "text-davinci-003",
         prompt: text,
@@ -44,25 +44,17 @@ const GPTFunction = async(text) => {
     });
 
     return response.data.choices[0].text;
-}
-
-app.use("/uploads", express.static('uploads')); //enables node.js to serve the contents of an uploads folder. The contents refer to static files such as images, CSS and javascript files
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-app.use(cors());
-app.get("/api", (req, res) => {
-    res.json({
-        messsage: 'Hello World',
-    });
-});
-
-app.listen(PORT, () => {
-    console.log(`Server listening on ${PORT}`);
-});
+};
 
 //code below accepts the form data from the client, converts the workHistory to its original data structure, and puts them all into an object.
-app.post("/resume/create", upload.single("profileImgImage"), async(req, res) => {
-   //JSON format
+let database = [];
+
+app.post("/resume/create", upload.single("profileImgImage"), async (req, res) => {
+
+    const data = { ...newEntry, ...chatgptData };
+    database.push(data);
+
+    //JSON format
     const {
         fullName,
         currentPosition,
@@ -84,7 +76,48 @@ app.post("/resume/create", upload.single("profileImgImage"), async(req, res) => 
         currentTechnologies,
         workHistory: workArray
     }
-    
+
+    //Loops through the items in the workArray and converts them to a string.
+    const remainderText = () => {
+        let stringText = "";
+        for (let i = 0; i < workArray.length; i++) {
+            stringText += `${workArray[i].name} as a ${workArray[i].position}.`;
+        }
+        return stringText;
+    };
+
+    //The job description prompt
+    const prompt1 = `I am writing a resume, my details are \n name: ${fullName} \n role: ${currentPosition} (${currentLength} years). \n I write in the technologies: ${currentTechnologies}. can you write a 100 words description for the top of the resume(first person writing)? `;
+
+    const prompt2 = `I am writing a resume, my details are \n name: ${fullName} \n role: ${currentPosition} (${currentLength} years). \n I write in the technologies: ${currentTechnologies}. can you write 10 points for a resume on what I am good at?`;
+
+    const prompt3 = `I am writing a resume, my details are \n name: ${fullName} \n role: ${currentPosition} (${currentLength} years). \n During my years I worked at $ {workArray.length} companies. ${remainderText()} \n Can you write me 50 words for each company separated in numbers of my succession in the company(in first person)?`;
+
+    //generating a GPT-3 result
+    const objective = await GPTFunction(prompt1);
+    const keypoints = await GPTFunction(prompt2);
+    const jobResponsibilities = await GPTFunction(prompt3);
+
+    //putting them in an object
+    const chatgptData = { objective, keypoints, jobResponsibilities };
+
+    //logging the result
+    console.log(chatgptData);
+
+    app.use("/uploads", express.static('uploads')); //enables node.js to serve the contents of an uploads folder. The contents refer to static files such as images, CSS and javascript files
+    app.use(express.urlencoded({ extended: true }));
+    app.use(express.json());
+    app.use(cors());
+    app.get("/api", (req, res) => {
+        res.json({
+            messsage: 'Hello World',
+        });
+    });
+
+    app.listen(PORT, () => {
+        console.log(`Server listening on ${PORT}`);
+    });
+
     res.json({
         message: "Request Successful!",
         data: {}
