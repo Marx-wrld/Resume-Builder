@@ -1,20 +1,31 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import ErrorPage from "./ErrorPage";
+import { useReactToPrint } from 'react-to-print';
 
 //This code shows the resume generated from the OpenAI API ina a printable format.
 const Resume = ({result}) => {
+
+  const componentRef = useRef();
+
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+    documentTitle: `${result.fullName} Resume`,
+    onAfterPrint: () => alert("Print Successful!"),
+  });
+
+   //returns an error page if the result object is empty
+   if (JSON.stringify(result) === "{}"){
+    return <ErrorPage />;
+  }
+
   //function that replaces the new line with a break tag
   const replaceWithBr = (string) => {
     return string.replace(/\n/g, "<br />");
   }
-  //returns an error page if the result object is empty
-  if (JSON.stringify(result) === "{}"){
-    return <ErrorPage />;
-  }
-  const handlePrint = () => alert("Printing");
-
+ 
   return (
     <>
+    {/* handlePrint function prints the elements within the componentRef - main tag */}
       <button onClick={handlePrint}>Print Page</button>
       <main className='container' ref={componentRef}>
         <header className='header'>
@@ -42,7 +53,7 @@ const Resume = ({result}) => {
                 dangerouslySetInnerHTML={{
                   __html: replaceWithBr(result.objective),
                 }}
-                className='resumeeBodyContent'
+                className='resumeBodyContent'
               />
             </div>
             <div>

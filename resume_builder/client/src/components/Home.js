@@ -10,43 +10,10 @@ const Home = ({setResult}) => {
     const [currentLength, setCurrentLength] = useState(1);
     const [currentTechnologies, setCurrentTechnologies] = useState("");
     const [profileImg, setProfileImg] = useState(null);
-    const [loading, setLoading] = useState(false);
-    const navigate = useNavigate();
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        const formData = new FormData();
-        formData.append("profileImgImage", profileImg, profileImg.name);
-        formData.append("fullName", fullName);
-        formData.append("currentPosition", currentPosition);
-        formData.append("currentLength", currentLength);
-        formData.append("currentTechnologies", currentTechnologies);
-        formData.append("workHistory", JSON.stringify(companyInfo));
-
-        axios.post("http://localhost:4000/resume/create", formData, {}).then((res) => {
-            if (res.data.message){
-                //updates the result object
-                setResult(res.data.data);
-                navigate("/resume");
-            }
-        }).catch((err) => console.error(err));
-        setLoading(true);
-
-        console.log({
-            fullName,
-            currentPosition,
-            currentLength,
-            currentTechnologies,
-            profileImg
-        });
-        setLoading(true);
-    };
-
     //Array that holds the users' previous work experience, so we add a new state to hold the array of job descriptions
     const [companyInfo, setCompanyInfo] = useState([{name: "", position: ""}]);
-
-    //The functions below help with updating the state
+    const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
 
     //Updates the state with users' input
     const handleAddCompany = () =>
@@ -64,6 +31,29 @@ const Home = ({setResult}) => {
         const list = [...companyInfo];
         list[index][name] = value;
         setCompanyInfo(list);
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        //The functions below help with updating the state
+        const formData = new FormData();
+        formData.append("profileImage", profileImg, profileImg.name);
+        formData.append("fullName", fullName);
+        formData.append("currentPosition", currentPosition);
+        formData.append("currentLength", currentLength);
+        formData.append("currentTechnologies", currentTechnologies);
+        formData.append("workHistory", JSON.stringify(companyInfo));
+
+        axios.post("http://localhost:4000/resume/create", formData, {}).then((res) => {
+            if (res.data.message){
+                //updates the result object
+                setResult(res.data.data);
+                navigate("/resume");
+            }
+        })
+        .catch((err) => console.error(err));
+        setLoading(true);
     };
 
     //renders the loading component you submit the form
@@ -149,7 +139,7 @@ const Home = ({setResult}) => {
             {/* The handleUpdateCompany function runs when a user updates the input field  */}
             {/* The handleRemoveCompany removes an item from the list of elements, and the handleAddCompany adds a new input field */}
 
-                {companyInfo.map((index => (
+                {companyInfo.map((company, index => (
                     <div className='nestedContainer' key={index}>
                         <div className='companies'>
                             <label htmlFor="name">
