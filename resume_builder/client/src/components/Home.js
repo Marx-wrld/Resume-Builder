@@ -51,8 +51,7 @@ const Home = ({setResult}) => {
                 setResult(res.data.data);
                 navigate("/resume");
             }
-        })
-        .catch((err) => console.error(err));
+        }).catch((err) => console.error(err));
         setLoading(true);
     };
 
@@ -64,7 +63,7 @@ const Home = ({setResult}) => {
     return (
         <div className='app'>
             <h1>Resume Builder</h1>
-            <p>Generate a resume with ChatGPT</p>
+            <p>Generrgb(50, 149, 50)h ChatGPT</p>
             <form
                 onSubmit={handleSubmit}
                 method="POST"
@@ -139,7 +138,7 @@ const Home = ({setResult}) => {
             {/* The handleUpdateCompany function runs when a user updates the input field  */}
             {/* The handleRemoveCompany removes an item from the list of elements, and the handleAddCompany adds a new input field */}
 
-                {companyInfo.map((company, index => (
+                {companyInfo.map((company, index) => (
                     <div className='nestedContainer' key={index}>
                         <div className='companies'>
                             <label htmlFor="name">
@@ -179,7 +178,7 @@ const Home = ({setResult}) => {
                             )}
                         </div>
                     </div>
-                )))}
+                ))}
                 <button>CREATE RESUME</button>
             </form>
 

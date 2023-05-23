@@ -63,7 +63,7 @@ button{
   width: 50%;
 }
 #addBtn{
-  background-color: green;
+  background-color: rgb(68, 147, 68);
   margin-right: 5px;
 }
 #deleteBtn{
