@@ -31,11 +31,11 @@ const storage = multer.diskStorage({
 
 const upload = multer({
     storage: storage,
-    limits: { fileSize: 1024 * 1024 * 5 },
+    limits: { fileSize: 1024 * 1024 * 5 }
 });
 
 const configuration = new Configuration({
-    apiKey: "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",
+    apiKey: "<YOUR_API_KEY>",
 });
 
 const openai = new OpenAIApi(configuration);
@@ -79,7 +79,7 @@ const newEntry = {
     currentLength,
     currentTechnologies,
     workHistory: workArray
-}
+};
 
 
 //The job description prompt

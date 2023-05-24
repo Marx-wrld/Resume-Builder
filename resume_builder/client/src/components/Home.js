@@ -63,7 +63,7 @@ const Home = ({setResult}) => {
     return (
         <div className='app'>
             <h1>Resume Builder</h1>
-            <p>Generrgb(50, 149, 50)h ChatGPT</p>
+            <p>Generate your resume with ChatGPT</p>
             <form
                 onSubmit={handleSubmit}
                 method="POST"
@@ -133,7 +133,7 @@ const Home = ({setResult}) => {
                     onChange={(e) => setProfileImg(e.target.files[0])}
                 />
 
-                <h3> Companies You've Worked At</h3>
+                <h3>Experience</h3>
             {/* The code below maps through the elements within the companyInfo array and displays them on the webpage.*/}
             {/* The handleUpdateCompany function runs when a user updates the input field  */}
             {/* The handleRemoveCompany removes an item from the list of elements, and the handleAddCompany adds a new input field */}
