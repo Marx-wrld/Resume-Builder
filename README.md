@@ -6,7 +6,7 @@ Creating a resume builder application using React, Node.js and the OpenAI API.
 - CORS is a Node.js  package that allows communication between different domains.
 - Nodemon is a Node.js tool that automatically restarts the server after detecting file changes.
 ```
-- Run npm install to build the project with inclusion of its dependecies.
+- Run ```npm install``` to build the project with inclusion of its dependecies.
 #### Client Side
 
 ![2023-05-23 19_43_18-](https://github.com/Marx-wrld/Resume-Builder/assets/105711066/d3475abd-a436-40a1-a7e8-611b5a7a3ff1)
