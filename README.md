@@ -7,4 +7,5 @@ Creating a resume builder application using React, Node.js and the OpenAI API.
 - Nodemon is a Node.js tool that automatically restarts the server after detecting file changes.
 ```
 #### Client Side
-![2023-05-23 19_42_04-](https://github.com/Marx-wrld/Resume-Builder/assets/105711066/af1dcbc1-57d4-4d7a-af24-74764779d8bf)
+
+![2023-05-23 19_43_18-](https://github.com/Marx-wrld/Resume-Builder/assets/105711066/d3475abd-a436-40a1-a7e8-611b5a7a3ff1)
