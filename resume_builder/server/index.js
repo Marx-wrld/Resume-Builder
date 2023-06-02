@@ -1,5 +1,5 @@
 //OpenAI API key configuration
-const {Configuration, OpenAIApi} = require("openai");
+const { Configuration, OpenAIApi } = require("openai");
 const express = require("express");
 const cors = require("cors");
 const app = express();
