@@ -1,16 +1,17 @@
 {
-  "name": "resume-builder",
+  "name": "server",
   "version": "1.0.0",
-  "description": "Building a resume builder app using Node.js",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "keywords": [],
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.2",
-    "mongoose": "^7.6.1"
+    "nodemon": "^3.0.1"
   }
 }
