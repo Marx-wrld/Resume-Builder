@@ -5,4 +5,4 @@ A repo containing a resume builder application built using Node.js, ExpressJs, A
 - CORS is a node.js package that allows communication between different domains.
 - Nodemon will automatically restart the server after noticing file changes
 - React-Router will enable us to navigate between pages in our react app.
-- Axios is a prmoised based HTTP client for performing asynchronous requests
+- Axios is a promise based HTTP client for performing asynchronous requests
