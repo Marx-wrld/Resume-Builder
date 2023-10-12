@@ -46,6 +46,7 @@ const Home = () => {
         formData.append("currentTechnologies", currentTechnologies);
         formData.append("workHistory", JSON.stringify(companyInfo));
 
+        //This code creates a key & value pair representing the data sent via  axios to the API endpoint on the server
         axios 
             .post("http://localhost:4000/resume/create", formData, {})
             .then((res) => {
@@ -130,6 +131,8 @@ const Home = () => {
                     required
                 />
 
+
+                {/* This code maps through the elements within the companyInfo array and displayes them on the webpage. */}
                 <h3>Work Experience</h3>
 
                 <form action="">
@@ -151,7 +154,7 @@ const Home = () => {
                                     type="text"
                                     name="position"
                                     className="companyInput"
-                                    onChange={(e) => handleUpdateCompany(e, index)}
+                                    onChange={(e) => handleUpdateCompany(e, index)} //runs when a user updates the input field
                                     required
                                 />
                             </div>
@@ -161,7 +164,7 @@ const Home = () => {
                                     <button
                                         id="addBtn"
                                         type="button"
-                                        onClick={handleAddCompany}
+                                        onClick={handleAddCompany} //Adds a new input to the field
                                     >
                                         Add
                                     </button>
@@ -170,7 +173,7 @@ const Home = () => {
                                     <button
                                         id="deleteBtn"
                                         type="button"
-                                        onClick={() => handleRemoveCompany(index)}
+                                        onClick={() => handleRemoveCompany(index)} //Removes an item from the list
                                     >
                                         Remove
                                     </button>
