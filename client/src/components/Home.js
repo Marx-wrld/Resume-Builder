@@ -143,7 +143,6 @@ const Home = () => {
                                 <input
                                     type="text"
                                     name="name"
-                                    className="companyInput"
                                     onChange={(e) => handleUpdateCompany(e, index)}
                                     required
                                 />
@@ -153,7 +152,6 @@ const Home = () => {
                                 <input
                                     type="text"
                                     name="position"
-                                    className="companyInput"
                                     onChange={(e) => handleUpdateCompany(e, index)} //runs when a user updates the input field
                                     required
                                 />
