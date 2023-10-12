@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Loading from "./Loading";
+import Loading from "../Loading";
 
 const Home = () => {
     const [loading, setLoading] = useState(false);
@@ -29,13 +29,13 @@ const Home = () => {
         <div className='app'>
             <h1>Resume Builder</h1>
             <p>Generate a resume with OpenAI in a few seconds</p>
-            <form 
-                onSubmit={handleFormSubmit} 
+            <form
+                onSubmit={handleFormSubmit}
                 method='POST'
                 encType='multipart/form-data'
             >
                 <label htmlFor="fullName">Enter your full name</label>
-                <input 
+                <input
                     type="text"
                     name="fullName"
                     id="fullName"
@@ -46,12 +46,12 @@ const Home = () => {
                 <div className="nestedContainer">
                     <div>
                         <label htmlFor="currentPosition">Current Position</label>
-                        <input 
-                            type="text" 
+                        <input
+                            type="text"
                             name="currentPosition"
                             className="currentInput"
                             value={currentPosition}
-                            onChange={(e) => setCurrentPosition(e.target.value)}    
+                            onChange={(e) => setCurrentPosition(e.target.value)}
                             required
                         />
                     </div>
@@ -59,8 +59,8 @@ const Home = () => {
                         <label htmlFor="currentLength">
                             For how long? (years from)
                         </label>
-                        <input 
-                            type="text" 
+                        <input
+                            type="text"
                             name="currentLength"
                             className="currentInput"
                             value={currentLength}
@@ -72,8 +72,8 @@ const Home = () => {
                         <label htmlFor="currentTechnologies">
                             Technologies used
                         </label>
-                        <input 
-                            type="text" 
+                        <input
+                            type="text"
                             name="currentTechnologies"
                             className="currentInput"
                             value={currentTechnologies}
@@ -83,10 +83,10 @@ const Home = () => {
                     </div>
                 </div>
                 <label htmlFor="photo">
-                    Upload your headshot image
+                    Upload your profile image
                 </label>
-                <input 
-                    type="text" 
+                <input
+                    type="file"
                     name="photo"
                     id="photo"
                     accept="image/x-png,image/x-jpeg,image/jpg"
