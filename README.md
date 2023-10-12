@@ -1,4 +1,4 @@
 # Resume-Builder
-Creating a resume builder application using React, Node.js and the OpenAI API.
+Creating a resume builder application using Node.js, Axios, React-Router, Nodemon, CORS & React for the UI
 
 
