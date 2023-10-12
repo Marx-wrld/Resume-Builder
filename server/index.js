@@ -29,7 +29,7 @@ app.post("/resume/create", upload.single("headshotImage"), async(req, res) => {
         currentPosition,
         currentLength,
         currentTechnologies,
-        workHistory,
+        workExperience,
     } = req.body;
 
     console.log(req.body);

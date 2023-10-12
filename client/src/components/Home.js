@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Loading from "../Loading";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
     const [loading, setLoading] = useState(false);
@@ -13,6 +14,7 @@ const Home = () => {
         name: "",
         position: ""
     }])
+    const navigate = useNavigate();
 
     //Updates the companyInfo state with the user's input
     const handleAddCompany = () => setCompanyInfo([...companyInfo, { name: "", position: ""}]);
@@ -43,7 +45,16 @@ const Home = () => {
         formData.append("currentLength", currentLength);
         formData.append("currentTechnologies", currentTechnologies);
         formData.append("workHistory", JSON.stringify(companyInfo));
-        axios .postFormData(formData);
+
+        axios 
+            .post("http://localhost:4000/resume/create", formData, {})
+            .then((res) => {
+                if (res.data.message){
+                    console.log(res.data.data);
+                    navigate("/resume");
+                }
+            })
+            .catch((err) => console.log(err));
         setLoading(true);
     };
 
@@ -119,7 +130,7 @@ const Home = () => {
                     required
                 />
 
-                <h3>Work History</h3>
+                <h3>Work Experience</h3>
 
                 <form action="">
                     {companyInfo.map((company, index) => (
@@ -130,7 +141,6 @@ const Home = () => {
                                     type="text"
                                     name="name"
                                     className="companyInput"
-                                    value={company.name}
                                     onChange={(e) => handleUpdateCompany(e, index)}
                                     required
                                 />
@@ -141,25 +151,30 @@ const Home = () => {
                                     type="text"
                                     name="position"
                                     className="companyInput"
-                                    value={company.position}
                                     onChange={(e) => handleUpdateCompany(e, index)}
                                     required
                                 />
                             </div>
                             
                             <div className="btn__group">
-                            <button
-                                type="button"
-                                onClick={() => handleAddCompany()}
-                            >
-                                Add
-                                </button>
-                            <button
-                                type="button"
-                                onClick={() => handleRemoveCompany(index)}
-                            >
-                                Remove
-                            </button>
+                                {companyInfo.length - 1 === index && companyInfo.length < 5 && (
+                                    <button
+                                        id="addBtn"
+                                        type="button"
+                                        onClick={handleAddCompany}
+                                    >
+                                        Add
+                                    </button>
+                                )}
+                                {companyInfo.length > 1 && (
+                                    <button
+                                        id="deleteBtn"
+                                        type="button"
+                                        onClick={() => handleRemoveCompany(index)}
+                                    >
+                                        Remove
+                                    </button>
+                                )}
                         </div>
                         </div>
                     ))}
