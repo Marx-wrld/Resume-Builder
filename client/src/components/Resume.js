@@ -1,4 +1,4 @@
-//  Page to display the generated OpenAI API resume a printable format
+//  Page to display the generated OpenAI API resume as a printable format
 import React from 'react';
 import ErrorPage from './ErrorPage';
 
