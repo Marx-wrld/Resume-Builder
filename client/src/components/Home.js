@@ -119,6 +119,51 @@ const Home = () => {
                     required
                 />
 
+                <h3>Work History</h3>
+
+                <form action="">
+                    {companyInfo.map((company, index) => (
+                        <div className="nestedContainer" key={index}>
+                            <div className="companies">
+                                <label htmlFor="name">Company Name</label>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    className="companyInput"
+                                    value={company.name}
+                                    onChange={(e) => handleUpdateCompany(e, index)}
+                                    required
+                                />
+                            </div>
+                            <div className="companies">
+                                <label htmlFor="position">Position</label>
+                                <input
+                                    type="text"
+                                    name="position"
+                                    className="companyInput"
+                                    value={company.position}
+                                    onChange={(e) => handleUpdateCompany(e, index)}
+                                    required
+                                />
+                            </div>
+                            
+                            <div className="btn__group">
+                            <button
+                                type="button"
+                                onClick={() => handleAddCompany()}
+                            >
+                                Add
+                                </button>
+                            <button
+                                type="button"
+                                onClick={() => handleRemoveCompany(index)}
+                            >
+                                Remove
+                            </button>
+                        </div>
+                        </div>
+                    ))}
+                </form>
                 <button>CREATE RESUME</button>
             </form>
         </div>
