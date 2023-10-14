@@ -3,7 +3,7 @@ A repo containing a resume builder application built using Node.js, ExpressJs, A
 
 - ExpressJs is fast and provides several features for building apps in node.js.
 - CORS is a node.js package that allows communication between different domains.
-- Nodemon will automatically restart the server after noticing file changes
+- Nodemon will automatically restart the server after noticing file changes.
 - React-Router will enable us to navigate between pages in our react app.
 - Axios is a promise based HTTP client for performing asynchronous requests.
 - Multer is a node.js middleware for uploading files to the server.
