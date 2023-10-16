@@ -6,11 +6,19 @@ const Resume = ({result}) => {
     if (JSON.stringify(result) === '{}') {
         return <ErrorPage />;
     }
+
+    //function to replace the new line with a break tag
     const replaceWithBr = (string) => {
 		return string.replace(/\n/g, "<br />");
 	};
 
+    //returns an error page if the result object is empty
+    if (JSON.stringify(result) === '{}') {
+        return <ErrorPage />;
+    }
+
     const handlePrint = () => alert("Printing...");
+    
     return (
         <div>
             <button onClick={handlePrint}>Print Page</button>
