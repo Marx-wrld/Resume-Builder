@@ -3,7 +3,7 @@ import Loading from "../Loading";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const Home = () => {
+const Home = ({ setResult }) => {
     const [loading, setLoading] = useState(false);
     const [fullName, setFullName] = useState("");
     const [currentPosition, setCurrentPosition] = useState("");
@@ -51,7 +51,7 @@ const Home = () => {
             .post("http://localhost:4000/resume/create", formData, {})
             .then((res) => {
                 if (res.data.message){
-                    console.log(res.data.data);
+                    setResult(res.data.data);
                     navigate("/resume");
                 }
             })

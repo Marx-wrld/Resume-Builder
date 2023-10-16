@@ -120,3 +120,17 @@ const GPTFunction = async (text) => {
     return response.data.choices[0].text;
 };
 //the text-davinci-003 model generates an appropriate answer to the prompt.
+
+
+//returning an AI generated result and the info the users entered then creating an array reps the database that stores results.
+let database = [];
+
+app.post("/resume/create", upload.single("headshotImage"), async (req, res) => {
+    const data = { ...newEntry, ...chatgptData };
+    database.push(data);
+    
+    res.json({
+        message: "Request successful!",
+        data,
+    });
+});
