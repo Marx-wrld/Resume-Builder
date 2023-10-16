@@ -52,34 +52,34 @@ app.post("/resume/create", upload.single("headshotImage"), async(req, res) => {
 //creating the prompts to be passed into the GPT function
 //Function below loops through the array of work History and returns a string data type of all work experiences.
 
-// const remainderText = () => {
-//     let stringText = "";
-//     for (let i = 0; i < workArray.length; i++){
-//         stringText += `${workArray[i].name} as a ${workArray[i].position}`;
-//     }
-//     return stringText;
-// };
+const remainderText = () => {
+    let stringText = "";
+    for (let i = 0; i < workArray.length; i++){
+        stringText += `${workArray[i].name} as a ${workArray[i].position}`;
+    }
+    return stringText;
+};
 
-// //Job description prompt
-// const prompt1 = `I am writing a resume, my details are \n name: ${fullName} \n role: ${currentPosition} (${currentLength} years). \n I write in the technologies: ${currentTechnologies}. Can you write a 100 words description for the top of the resume(first person writing)?`;
+//Job description prompt
+const prompt1 = `I am writing a resume, my details are \n name: ${fullName} \n role: ${currentPosition} (${currentLength} years). \n I write in the technologies: ${currentTechnologies}. Can you write a 100 words description for the top of the resume(first person writing)?`;
 
-// //Job responsibilities prompt
-// const prompt2 = `I am writing a resume, my details are \n name: ${fullName} \n role: ${currentPosition} (${currentLength} years). \n I write in the technologies: ${currentTechnologies}. Can you write 10 points for a resume on what I am good at?`;
+//Job responsibilities prompt
+const prompt2 = `I am writing a resume, my details are \n name: ${fullName} \n role: ${currentPosition} (${currentLength} years). \n I write in the technologies: ${currentTechnologies}. Can you write 10 points for a resume on what I am good at?`;
 
-// //Job achievements prompt 
-// const prompt3 = `I am writing a resume, my details are \n name: ${fullName} \n role: ${currentPosition} (${currentLength} years). \n During my years I worked at ${workArray.length} companies. ${remainderText()} \n Can you write me 50 words for each company separated in numbers of my succession in the compan (in first person)?`;
+//Job achievements prompt 
+const prompt3 = `I am writing a resume, my details are \n name: ${fullName} \n role: ${currentPosition} (${currentLength} years). \n During my years I worked at ${workArray.length} companies. ${remainderText()} \n Can you write me 50 words for each company separated in numbers of my succession in the compan (in first person)?`;
 
-// //generating a GPT-3 result 
+//generating a GPT-3 result 
 
-// const objective  = await GPTFunction(prompt1);
-// const keypoints = await GPTFunction(prompt2);
-// const jobResponsiblities = await GPTFunction(prompt3);
+const objective  = await GPTFunction(prompt1);
+const keypoints = await GPTFunction(prompt2);
+const jobResponsiblities = await GPTFunction(prompt3);
 
-// //Storing the result into an object
-// const chatgptData = { objective, keypoints, jobResponsiblities };
+//Storing the result into an object
+const chatgptData = { objective, keypoints, jobResponsiblities };
 
-// //Logging the result
-// console.log(chatgptData);
+//Logging the result
+console.log(chatgptData);
 
 //configuring multer
 const storage = multer.diskStorage({
