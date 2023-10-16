@@ -38,15 +38,15 @@ app.post("/resume/create", upload.single("headshotImage"), async(req, res) => {
     const workArray = JSON.parse(workExperience); //an array
 
     //group the values into an object
-    // const newEntry = {
-    //     id: generateID(),
-    //     fullName,
-    //     image_url: `http://localhost:4000/uploads/${req.file.filename}`,
-    //     currentPosition,
-    //     currentLength,
-    //     currentTechnologies,
-    //     workExperience: workArray,
-    // };
+    const newEntry = {
+        id: generateID(),
+        fullName,
+        image_url: `http://localhost:4000/uploads/${req.file.filename}`,
+        currentPosition,
+        currentLength,
+        currentTechnologies,
+        workExperience: workArray,
+    };
 });
 
 //creating the prompts to be passed into the GPT function
