@@ -135,7 +135,7 @@ const Home = () => {
                 {/* This code maps through the elements within the companyInfo array and displayes them on the webpage. */}
                 <h3>Work Experience</h3>
 
-                <form action="">
+                <form action="" method="POST" enctype="multipart/form-data">
                     {companyInfo.map((company, index) => (
                         <div className="nestedContainer" key={index}>
                             <div className="companies">
