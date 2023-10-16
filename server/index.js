@@ -107,16 +107,16 @@ const openai = new OpenAIApi(configuration);
 
 //Function to accept a text as a parameter and return an AI generated result
 
-// const GPTFunction = async (text) => {
-//     const response = await openai.createCompletion({
-//         model: "text-davinci-003",
-//         prompt: text,
-//         temperature: 0.6,
-//         max_tokens: 250,
-//         top_p: 1,
-//         frequency_penalty: 1,
-//         presence_penalty: 1,
-//     });
-//     return response.data.choices[0].text;
-// };
+const GPTFunction = async (text) => {
+    const response = await openai.createCompletion({
+        model: "text-davinci-003",
+        prompt: text,
+        temperature: 0.6,
+        max_tokens: 250,
+        top_p: 1,
+        frequency_penalty: 1,
+        presence_penalty: 1,
+    });
+    return response.data.choices[0].text;
+};
 //the text-davinci-003 model generates an appropriate answer to the prompt.
