@@ -22,7 +22,7 @@ const Home = ({ setResult }) => {
     //removes a selected item from the list
     const handleRemoveCompany = (index) => {
         const list = [...companyInfo];
-        list.space(index, 1);
+        list.splice(index, 1);
         setCompanyInfo(list);
     }
 
