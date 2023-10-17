@@ -1,28 +1,32 @@
 //  Page to display the generated OpenAI API resume as a printable format
-import React from 'react';
+import React, { useRef } from 'react';
 import ErrorPage from './ErrorPage';
+import { useReactToPrint } from "react-to-print";
 
 const Resume = ({result}) => {
-    if (JSON.stringify(result) === '{}') {
-        return <ErrorPage />;
-    }
-
     //function to replace the new line with a break tag
     const replaceWithBr = (string) => {
 		return string.replace(/\n/g, "<br />");
 	};
+
+    const componentRef = useRef();
+
+    //function to handle the printing of the resume of elements within the componentRef
+    const handlePrint = useReactToPrint({
+        content: () => componentRef.current,
+        documentTitle: `${result.fullName} Resume`,
+        onAfterPrint: () => alert("Print successful!"),
+    });
 
     //returns an error page if the result object is empty
     if (JSON.stringify(result) === '{}') {
         return <ErrorPage />;
     }
 
-    const handlePrint = () => alert("Printing...");
-    
     return (
         <div>
             <button onClick={handlePrint}>Print Page</button>
-            <main className='container'>
+            <main className='container' ref={componentRef}>
                 {/*This code displays the result on the webpage according to the specified layout.  */}
                 {/* Function replaceWithBr() replaces the new line character with the HTML break tag. */}
                 {/* Function handlePrint() is called when the user clicks the Print Page button. */}

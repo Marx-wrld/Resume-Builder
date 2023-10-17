@@ -4,6 +4,8 @@ const multer = require("multer");
 const path = require("path");
 const app = express();
 const PORT = 4000;
+const { configuration, OpenAIApi } = require("openai");
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -12,6 +14,7 @@ app.use("/uploads", express.static( "uploads"));
 //app.use() function enables node.js to serve the contents of an uploads folder. Static files such as images, CSS, and Js files
 //The storage variable contains multer.diskStorage gives us full control of storing the images.
 //The upload variable passes the configuration to multer and set a size limit  of 5mb for the images
+
 
 app.get("/api", (req, res) => {
     res.json({
@@ -49,6 +52,35 @@ app.post("/resume/create", upload.single("headshotImage"), async(req, res) => {
     };
 });
 
+let database = [];
+
+const GPTFunction = async (text) => {
+    const response = await openai.createCompletion({
+        model: "text-davinci-003",
+        prompt: text,
+        temperature: 0.6,
+        max_tokens: 250,
+        top_p: 1,
+        frequency_penalty: 1,
+        presence_penalty: 1,
+    });
+    return response.data.choices[0].text;
+};
+//the text-davinci-003 model generates an appropriate answer to the prompt.
+
+
+//returning an AI generated result and the info the users entered then creating an array reps the database that stores results.
+
+app.post("/resume/create", upload.single("headshotImage"), async (req, res) => {
+    const data = { ...newEntry, ...chatgptData };
+    database.push(data);
+    
+    res.json({
+        message: "Request successful!",
+        data,
+    });
+});
+
 //creating the prompts to be passed into the GPT function
 //Function below loops through the array of work History and returns a string data type of all work experiences.
 
@@ -77,6 +109,8 @@ const jobResponsiblities = await GPTFunction(prompt3);
 
 //Storing the result into an object
 const chatgptData = { objective, keypoints, jobResponsiblities };
+const data = { ...newEntry, ...chatgptData };
+database.push(data);
 
 //Logging the result
 console.log(chatgptData);
@@ -97,7 +131,7 @@ const upload = multer({
 });
 
 //Configuring the api
-const { configuration, OpenAIAPI } = require("openai");
+
 
 const configuration = new Configuration({
     apikey: "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",
@@ -107,30 +141,5 @@ const openai = new OpenAIApi(configuration);
 
 //Function to accept a text as a parameter and return an AI generated result
 
-const GPTFunction = async (text) => {
-    const response = await openai.createCompletion({
-        model: "text-davinci-003",
-        prompt: text,
-        temperature: 0.6,
-        max_tokens: 250,
-        top_p: 1,
-        frequency_penalty: 1,
-        presence_penalty: 1,
-    });
-    return response.data.choices[0].text;
-};
-//the text-davinci-003 model generates an appropriate answer to the prompt.
 
 
-//returning an AI generated result and the info the users entered then creating an array reps the database that stores results.
-let database = [];
-
-app.post("/resume/create", upload.single("headshotImage"), async (req, res) => {
-    const data = { ...newEntry, ...chatgptData };
-    database.push(data);
-    
-    res.json({
-        message: "Request successful!",
-        data,
-    });
-});
