@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Loading from "../Loading";
+import Loading from "./Loading";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
