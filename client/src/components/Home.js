@@ -29,7 +29,7 @@ const Home = ({ setResult }) => {
     //updates an item within the list (name and position)
     const handleUpdateCompany = (e, index) => {
         const { name, value } = e.target;
-        const list = [...companyInfo]
+        const list = [...companyInfo];
         list[index][name] = value;
         setCompanyInfo(list);
     }
@@ -97,7 +97,7 @@ const Home = ({ setResult }) => {
                             For how long? (years from)
                         </label>
                         <input
-                            type="text"
+                            type="number"
                             name="currentLength"
                             className="currentInput"
                             value={currentLength}
@@ -135,7 +135,6 @@ const Home = ({ setResult }) => {
                 {/* This code maps through the elements within the companyInfo array and displayes them on the webpage. */}
                 <h3>Work Experience</h3>
 
-                <form action="" method="POST" enctype="multipart/form-data">
                     {companyInfo.map((company, index) => (
                         <div className="nestedContainer" key={index}>
                             <div className="companies">
@@ -179,9 +178,9 @@ const Home = ({ setResult }) => {
                         </div>
                         </div>
                     ))}
-                </form>
                 <button>CREATE RESUME</button>
-            </form>
+                
+                </form>
         </div>
     );
 };
