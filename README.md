@@ -7,3 +7,5 @@ A repo containing a resume builder application built using Node.js, ExpressJs, A
 - React-Router will enable us to navigate between pages in our react app.
 - Axios is a promise based HTTP client for performing asynchronous requests.
 - Multer is a node.js middleware for uploading files to the server.
+
+![2023-10-18 08_53_18-](https://github.com/Marx-wrld/Resume-Builder/assets/105711066/9ae96292-ed6b-43f6-ab93-cf1f6288b6e1)
