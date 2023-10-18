@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Loading from "../Loading";
+import Loading from "./Loading";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -44,7 +44,7 @@ const Home = ({ setResult }) => {
         formData.append("currentPosition", currentPosition);
         formData.append("currentLength", currentLength);
         formData.append("currentTechnologies", currentTechnologies);
-        formData.append("workHistory", JSON.stringify(companyInfo));
+        formData.append("workExperience", JSON.stringify(companyInfo));
 
         //This code creates a key & value pair representing the data sent via  axios to the API endpoint on the server
         axios 

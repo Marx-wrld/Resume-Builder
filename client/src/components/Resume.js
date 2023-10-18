@@ -60,7 +60,7 @@ const Resume = ({result}) => {
                         <h2 className='resumeBodyTitle'>
                             WORK EXPERIENCE
                         </h2>
-                        {result.workHistory.map((work) => (
+                        {result.workExperience.map((work) => (
                             <p className='resumeBodyContent' key={work.name}>
                                 <span style={{fontWeight: 'bold'}}>{work.name}</span> - {" "}
                                     {work.position}
