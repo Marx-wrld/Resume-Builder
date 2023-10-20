@@ -1,7 +1,7 @@
 # Resume-Builder
 A repo containing a resume builder application built using Node.js, ExpressJs, Axios, React-Router, Nodemon, CORS, Multer & React for the UI
 
-- ExpressJs is fast and provides several features for building apps in node.js.
+- [ExpressJs] is fast and provides several features for building apps in node.js.
 - CORS is a node.js package that allows communication between different domains.
 - Nodemon will automatically restart the server after noticing file changes.
 - React-Router will enable us to navigate between pages in our react app.
