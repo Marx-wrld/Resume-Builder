@@ -178,9 +178,10 @@ const Home = ({ setResult }) => {
                         </div>
                         </div>
                     ))}
+                    
                 <button>CREATE RESUME</button>
 
-                </form>
+            </form>
         </div>
     );
 };
