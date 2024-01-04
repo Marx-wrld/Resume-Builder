@@ -37,7 +37,7 @@ const openai = new OpenAIApi({ key: openaiAPIKey });
 const database = [];
 
 const GPTFunction = async (text) => {
-  const response = await openai.Completion.create({
+  const response = await openai.Completions.create({
     engine: "text-davinci-003",
     prompt: text,
     max_tokens: 250,
