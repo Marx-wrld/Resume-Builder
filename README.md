@@ -2,6 +2,7 @@
 A repo containing a resume builder application built using React(UI), Tailwind CSS & Hero icons.
 
 - This application structure involves a landing page (Home.js), a navigation bar (Navbar.js), resume templates (Minimalist.js and TwoColumn.js), and a component for dynamically rendering templates based on user selection (Resume.js). The templates receive data as props and display the user's information in a structured manner.
+
 - The TemplateData component renders the Resume component, passing various props such as userData, empData, eduData, projectData, type, headerColor, and headerTextColor.
 This integration allows the user-entered data and styling preferences to be used in generating the final resume layout.
   
