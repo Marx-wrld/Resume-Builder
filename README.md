@@ -3,6 +3,7 @@ A repo containing a resume builder application built using React(UI), Tailwind C
 
 ![Screenshot (127)](https://github.com/Marx-wrld/Resume-Builder/assets/105711066/5d9ceed1-368e-46e6-b243-4530f8fb7b5a)
 
+![Screenshot (126)](https://github.com/Marx-wrld/Resume-Builder/assets/105711066/4e83089f-0cfa-408c-9d50-8b40937e2202)
 
 
 #### Features
