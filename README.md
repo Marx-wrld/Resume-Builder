@@ -1,3 +1,5 @@
+A repo containing a resume builder application built using React(UI), Tailwind CSS, Hero icons and AWS Amplify.
+
 #### Features
 * Ready-to-use templates 
 * Color picker
