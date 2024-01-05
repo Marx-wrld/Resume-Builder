@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "../assets/logo.svg";
 
-const Nav = ({ showDownloadBtn }) => {
+const Navbar = ({ showDownloadBtn }) => {
   const handleDownload = (e) => {
     e.preventDefault();
     window.print();
@@ -38,4 +38,4 @@ const Nav = ({ showDownloadBtn }) => {
   );
 };
 
-export default Nav;
+export default Navbar;
