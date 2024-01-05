@@ -1,6 +1,10 @@
 
 A repo containing a resume builder application built using React(UI), Tailwind CSS & Hero icons.
 
+![Screenshot (127)](https://github.com/Marx-wrld/Resume-Builder/assets/105711066/5d9ceed1-368e-46e6-b243-4530f8fb7b5a)
+
+
+
 #### Features
 * Ready-to-use templates 
 * Color picker
