@@ -1,23 +1,21 @@
-import React, { Component } from "react";
+import React from "react";
 import Logo from "../assets/logo.svg";
 
-class Nav extends Component {
-  render() {
-    return (
-      <div className="flex justify-between bg-white mx-auto px-4 py-2 print:hidden">
-        <a href="/">
-          <img
-            className="w-12 inline-block"
-            src={Logo}
-            alt="tech-resume-logo"
-          />
-        </a>
-        {this.props.showDownloadBtn?<button
+const Nav = ({ showDownloadBtn }) => {
+  const handleDownload = (e) => {
+    e.preventDefault();
+    window.print();
+  };
+
+  return (
+    <div className="flex justify-between bg-white mx-auto px-4 py-2 print:hidden">
+      <a href="/">
+        <img className="w-12 inline-block" src={Logo} alt="tech-resume-logo" />
+      </a>
+      {showDownloadBtn && (
+        <button
           className="z-10 rounded bg-blue text-white m-2 p-2 text-center print:hidden"
-          onClick={(e) => {
-            e.preventDefault();
-            window.print();
-          }}
+          onClick={handleDownload}
         >
           <svg
             className="w-5 inline-block"
@@ -34,10 +32,10 @@ class Nav extends Component {
             />
           </svg>{" "}
           Download PDF
-        </button>:""}
-      </div>
-    );
-  }
-}
+        </button>
+      )}
+    </div>
+  );
+};
 
 export default Nav;
