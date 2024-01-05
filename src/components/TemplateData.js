@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Nav from "./Nav";
+import Navbar from "./Navbar";
 import Resume from "./Resume";
 
 const TemplateData = () => {
@@ -37,7 +37,7 @@ const TemplateData = () => {
   });
 
   const [type, setType] = useState("two-column");
-  const [headerColor, setHeaderColor] = useState("#7F1D1D");
+  const [headerColor, setHeaderColor] = useState("#2933c2");
   const [headerTextColor, setHeaderTextColor] = useState("#ffffff");
 
   const [empTemplate, setEmpTemplate] = useState([]);
@@ -226,12 +226,14 @@ const TemplateData = () => {
   };
 
   const handleChange = (e) => {
+
     const userData = { ...data };
     const empData = { ...employment };
     const eduData = { ...education };
     const projectData = { ...project };
 
     if (e.target.name === "templates") {
+
       setType(e.target.value);
       e.target.value === "minimalist"
         ? setHeaderColor("#F3F4F6")
@@ -239,37 +241,52 @@ const TemplateData = () => {
       e.target.value === "minimalist"
         ? setHeaderTextColor("#1F2937")
         : setHeaderTextColor("#ffffff");
+
     } else if (e.target.name === "headerColor") {
       setHeaderColor(e.target.value);
+
     } else if (e.target.name === "headerTextColor") {
       setHeaderTextColor(e.target.value);
+
     } else if (e.target.name.includes("jobTitle")) {
       empData.jobTitles[`${e.target.name}`] = e.target.value;
-    } else if (e.target.name.includes("emp")) {
+    } else if (e.target.name.includes("emp")) 
+    {
       empData.emp[`${e.target.name}`] = e.target.value;
-    } else if (e.target.name.includes("jobDesc")) {
+    } else if (e.target.name.includes("jobDesc")) 
+    {
       empData.jobDesc[`${e.target.name}`] = e.target.value;
-    } else if (e.target.name.includes("jobStartDate")) {
+    } else if (e.target.name.includes("jobStartDate"))
+    {
       empData.jobStartDate[`${e.target.name}`] = e.target.value;
-    } else if (e.target.name.includes("jobEndDate")) {
+    } else if (e.target.name.includes("jobEndDate")) 
+    {
       empData.jobEndDate[`${e.target.name}`] = e.target.value;
-    } else if (e.target.name.includes("qual")) {
+    } else if (e.target.name.includes("qual")) 
+    {
       eduData.qual[`${e.target.name}`] = e.target.value;
-    } else if (e.target.name.includes("educ")) {
+    } else if (e.target.name.includes("educ")) 
+    {
       eduData.edu[`${e.target.name}`] = e.target.value;
-    } else if (e.target.name.includes("eduDesc")) {
+    } else if (e.target.name.includes("eduDesc")) 
+    {
       eduData.eduDesc[`${e.target.name}`] = e.target.value;
     } else if (e.target.name.includes("eduStartDate")) {
       eduData.eduStartDate[`${e.target.name}`] = e.target.value;
-    } else if (e.target.name.includes("eduEndDate")) {
+    } else if (e.target.name.includes("eduEndDate")) 
+    {
       eduData.eduEndDate[`${e.target.name}`] = e.target.value;
-    } else if (e.target.name.includes("projectTitle")) {
+    } else if (e.target.name.includes("projectTitle")) 
+    {
       projectData.projectTitles[`${e.target.name}`] = e.target.value;
-    } else if (e.target.name.includes("projectDesc")) {
+    } else if (e.target.name.includes("projectDesc")) 
+    {
       projectData.projectDesc[`${e.target.name}`] = e.target.value;
-    } else if (e.target.name.includes("projectStartDate")) {
+    } else if (e.target.name.includes("projectStartDate")) 
+    {
       projectData.projectStartDate[`${e.target.name}`] = e.target.value;
-    } else if (e.target.name.includes("projectEndDate")) {
+    } else if (e.target.name.includes("projectEndDate")) 
+    {
       projectData.projectEndDate[`${e.target.name}`] = e.target.value;
     } else {
       userData[`${e.target.name}`] = e.target.value;
@@ -283,7 +300,7 @@ const TemplateData = () => {
 
   return (
     <div className="w-screen h-full bg-gray-light text-gray-dark font-sans">
-      <Nav showDownloadBtn={true} />
+      <Navbar showDownloadBtn={true} />
       <div className="flex p-3 print:p-0">
         <form className="w-2/5 flex flex-col justify-evenly print:hidden">
           <h3 className="w-4/5 m-2 text-xl">Template Type</h3>
@@ -368,7 +385,7 @@ const TemplateData = () => {
             name="wantedJobTitle"
             value={data.wantedJobTitle}
             onChange={handleChange}
-            placeholder="Wanted Job Title"
+            placeholder="Job Title"
           />
           <textarea
             className="w-4/5 p-2 m-2 rounded"
