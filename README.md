@@ -1,13 +1,58 @@
-# Resume-Builder
-A repo containing a resume builder web application built using Node.js, ExpressJs, Axios, React-Router, Nodemon, CORS, Multer & React for the UI.
+# Tech Resume
+## A resume builder which helps you to effortlessly make a job-worthy resume. Easy to use and done within minutes - try now for free!
+Live: [https://main.doo2i0aqct9l.amplifyapp.com/](https://main.doo2i0aqct9l.amplifyapp.com/) 
 
-- [ExpressJs] is fast and provides several features for building apps in node.js.
-- [CORS] is a node.js package that allows communication between different domains.
-- [Nodemon] will automatically restart the server after noticing file changes.
-- [React-Router] will enable us to navigate between pages in our react app.
-- [Axios] is a promise based HTTP client for performing asynchronous requests.
-- [Multer] is a node.js middleware for uploading files to the server.
-- [React.js] for the web pages UI.
+<img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1614380298728/7vRha0XwN.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress">
 
-![2023-10-18 08_53_18-](https://github.com/Marx-wrld/Resume-Builder/assets/105711066/c647a250-0e38-4b4d-8a26-f27fc6879499)
+## :dizzy: Features
+* Ready-to-use templates 
+* Color picker
+* Download PDF 
 
+
+## :man_technologist: Technology Stack
+* [React](https://reactjs.org)
+* [Tailwind CSS](https://tailwindcss.com/)
+* [Hero Icons](https://heroicons.com/)
+* [AWS Amplify](https://aws.amazon.com/amplify/)
+
+## :zap: Installation
+1. Clone / Download this repo.
+2. Inside the project open a terminal and run:
+```bash
+npm install
+```
+This will install all the project dependencies.
+
+3. To start the development server run:
+```bash
+npm start
+```
+
+## :page_facing_up: License
+
+All the code available under the MIT license. See [LICENSE](LICENSE).
+
+```sh
+MIT License
+
+Copyright (c) 2021 Piyush Sinha
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
