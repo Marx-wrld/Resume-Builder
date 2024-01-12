@@ -1,7 +1,7 @@
 
 A repo containing a resume builder application built using React(UI), Tailwind CSS, post-css-plugin, react-router-dom, craco-plugin & Hero icons.
 
-- Link to the app - https://kana-estate.onrender.com/
+- Link to the app - https://resume-buildx.netlify.app/
 
 - This application structure involves a landing page (Home.js), a navigation bar (Navbar.js), resume templates (Minimalist.js and TwoColumn.js), and a component for dynamically rendering templates based on user selection (Resume.js). The templates receive data as props and display the user's information in a structured manner.
 
